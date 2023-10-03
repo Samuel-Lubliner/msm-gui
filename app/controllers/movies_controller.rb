@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
     # Redirect to the movie details page
     redirect_to("/movies/#{the_movie.id}")
   end
-  
+
 
   def create
     # params hash looks like this:
