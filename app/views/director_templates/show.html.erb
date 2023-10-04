@@ -52,6 +52,12 @@
   </dd>
 </dl>
 
+<form action="/directors/<%= @the_director.id %>/update" method="post">
+  <label for="image">Image:</label>
+  <input type="text" name="image" id="image" value="<%= @the_director.image %>">
+  <button type="submit">Update director</button>
+</form>
+
 <hr>
 
 <h2>Filmography</h2>

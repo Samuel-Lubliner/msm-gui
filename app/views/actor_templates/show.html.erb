@@ -54,6 +54,12 @@
 
 <hr>
 
+<form action="/actors/<%= @the_actor.id %>/update" method="post">
+  <label for="actor_image">Image</label>
+  <input type="text" name="actor[image]" id="actor_image" value="<%= @the_actor.image %>">
+  <button type="submit">Update actor</button>
+</form>
+
 <h2>Filmography</h2>
 
 <table border="1">

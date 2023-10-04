@@ -14,4 +14,28 @@ class ActorsController < ApplicationController
       
     render({ :template => "actor_templates/show" })
   end
+
+  def create
+    actor = Actor.new
+    actor.name = params.fetch("actor")["name"]
+    actor.save
+  
+    redirect_to("/actors/#{actor.id}")
+  end
+
+  def destroy
+    actor = Actor.find(params.fetch("id"))
+    actor.destroy
+  
+    redirect_to("/actors")
+  end
+
+  def update
+    actor = Actor.find(params.fetch("path_id"))
+    actor.image = params.fetch("actor")["image"]
+    actor.save
+  
+    redirect_to("/actors/#{actor.id}")
+  end
+
 end
